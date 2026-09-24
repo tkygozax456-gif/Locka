@@ -1,119 +1,247 @@
-<style>
-  * {
-    box-sizing: border-box;
+/* الألوان المستخدمة حسب لوحة ألوان التطبيق */
+:root {
+    --primary-color: #2E5B9A;      /* الأزرق الداكن */
+    --secondary-color: #5B8FD9;    /* الأزرق المتوسط */
+    --accent-light: #A7C8F0;       /* الأزرق الفاتح */
+    --bg-light: #F5F8FF;           /* خلفية التطبيق */
+    --border-color: #E5E7EB;       /* لون الحدود والتقسيم */
+    --text-dark: #1F2937;          /* لون النص الرئيسي */
+    --text-gray: #6B7280;          /* لون النص الفرعي */
+    --white: #FFFFFF;
+}
+
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-  }
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
 
-  body {
-    background: #f4f9ff;
-    color: #1f2937;
-  }
+body {
+    background-color: #E2E8F0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
 
-  .container {
-    width: 90%;
-    max-width: 500px;
-    margin: 40px auto;
-  }
+/* إطار الهاتف المحمول */
+.mobile-frame {
+    width: 375px;
+    height: 720px;
+    background-color: var(--bg-light);
+    border-radius: 35px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    border: 8px solid #333;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
 
-  .card {
-    background: #ffffff;
-    border-radius: 25px;
-    padding: 25px;
-    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.12);
-    border: 1px solid #dbeafe;
-  }
+/* شريط علوي (Status Bar) */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px 8px 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
 
-  .profile {
-    text-align: center;
-    margin-bottom: 25px;
-  }
+.status-icons i {
+    margin-right: 4px;
+    font-size: 12px;
+}
 
-  .profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #eaf2ff;
-    margin-bottom: 15px;
-    border: 4px solid #2563eb;
-  }
+/* محتوى الشاشة الرئيسي */
+.screen-content {
+    flex: 1;
+    padding: 16px 20px;
+    overflow-y: auto;
+}
 
-  h1 {
-    font-size: 28px;
-    color: #1d4ed8;
-    margin-bottom: 8px;
-  }
-
-  h2 {
-    color: #1e40af;
-    margin-bottom: 15px;
-  }
-
-  .description {
-    color: #64748b;
-    line-height: 1.8;
+/* ترحيب المستخدم */
+.user-header {
     margin-bottom: 20px;
-  }
+}
 
-  .info {
-    background: #eff6ff;
-    border-radius: 15px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-right: 4px solid #2563eb;
-  }
+.welcome-text {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
 
-  .info p {
-    margin: 8px 0;
-  }
+.subtitle {
+    font-size: 13px;
+    color: var(--text-gray);
+    margin-top: 2px;
+}
 
-  label {
-    display: block;
-    margin: 12px 0 6px;
-    font-weight: bold;
-    color: #1e3a8a;
-  }
+/* شريط البحث */
+.search-box {
+    position: relative;
+    margin-bottom: 24px;
+}
 
-  input,
-  select {
+.search-box input {
     width: 100%;
-    padding: 13px;
-    border: 1px solid #bfdbfe;
+    padding: 12px 42px 12px 16px;
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    font-size: 15px;
-    background: #ffffff;
-    color: #333;
-  }
-
-  input:focus,
-  select:focus {
+    font-size: 13px;
+    color: var(--text-dark);
     outline: none;
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px #dbeafe;
-  }
+    transition: all 0.2s ease;
+}
 
-  .book-btn {
-    width: 100%;
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 15px;
-    border-radius: 14px;
-    font-size: 18px;
-    margin-top: 20px;
+.search-box input:focus {
+    border-color: var(--secondary-color);
+}
+
+.search-box .search-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+/* بطاقات الإجراءات السريعة */
+.quick-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.action-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     cursor: pointer;
-  }
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
-  .book-btn:hover {
-    background: #1d4ed8;
-  }
+.action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
 
-  #message {
-    text-align: center;
-    margin-top: 18px;
-    color: #2563eb;
-    font-weight: bold;
-  }
-</style>
+.card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #EEF4FF;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    font-size: 22px;
+}
+
+.action-card span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* قسم الحجوزات */
+.bookings-section {
+    margin-bottom: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.view-all {
+    font-size: 12px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* بطاقة تفاصيل الحجز */
+.booking-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.booking-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-dark);
+}
+
+.info-row .label {
+    color: var(--text-gray);
+}
+
+.badge-locker {
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.icon-detail {
+    color: var(--secondary-color);
+    font-size: 14px;
+}
+
+/* شريط التنقل السفلي */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--white);
+    padding: 10px 0 16px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-gray);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.nav-item i {
+    font-size: 18px;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+}
