@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOCKA - الصفحة الرئيسية</title>
-    <!-- استدعاء خط Cairo من Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- استدعاء مكتبة الأيقونات Font Awesome -->
+    <!-- خط Cairo المعتمد بالتطبيق -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- مكتبة أيقونات Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- ربط ملف CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- إطار الهاتف المحمول -->
-    <div class="mobile-frame">
+    <!-- إطار جوال محاكي للشاشة -->
+    <div class="phone-screen">
         
         <!-- شريط الحالة (Status Bar) -->
         <div class="status-bar">
@@ -26,89 +25,84 @@
             </div>
         </div>
 
-        <!-- محتوى الشاشة الرئيسي -->
-        <div class="screen-content">
+        <!-- المحتوى الداخلي للشاشة -->
+        <div class="screen-body">
             
-            <!-- قسم الترحيب -->
-            <header class="user-header">
-                <h1 class="welcome-text">مرحباً، سارة</h1>
-                <p class="subtitle">ماذا تريدين أن تفعلي اليوم؟</p>
-            </header>
+            <!-- الترحيب -->
+            <div class="welcome-section">
+                <h2>مرحباً، سارة</h2>
+                <p>ماذا تريدين أن تفعلي اليوم؟</p>
+            </div>
 
-            <!-- شريط البحث -->
-            <div class="search-box">
+            <!-- مربع البحث -->
+            <div class="search-container">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
                 <input type="text" placeholder="ابحث عن لوكر أو مبنى...">
             </div>
 
-            <!-- أزرار الإجراءات السريعة (حجز لوكر / عرض الخريطة) -->
-            <div class="quick-actions">
-                <button class="action-card">
-                    <div class="card-icon">
+            <!-- الزران الأوسطان (حجز لوكر / عرض الخريطة) -->
+            <div class="actions-grid">
+                <div class="action-btn">
+                    <div class="icon-wrapper">
                         <i class="fa-regular fa-calendar-check"></i>
                     </div>
                     <span>حجز لوكر</span>
-                </button>
-
-                <button class="action-card">
-                    <div class="card-icon">
+                </div>
+                <div class="action-btn">
+                    <div class="icon-wrapper">
                         <i class="fa-solid fa-map-location-dot"></i>
                     </div>
                     <span>عرض الخريطة</span>
-                </button>
+                </div>
             </div>
 
             <!-- قسم حجوزاتي القادمة -->
-            <section class="bookings-section">
-                <div class="section-header">
-                    <h2>حجوزاتي القادمة</h2>
-                    <a href="#" class="view-all">عرض الكل</a>
-                </div>
+            <div class="section-header">
+                <h3>حجوزاتي القادمة</h3>
+                <button class="btn-see-all">عرض الكل</button>
+            </div>
 
-                <!-- بطاقة الحجز -->
-                <div class="booking-card">
-                    <div class="booking-info">
-                        <div class="info-row">
-                            <span class="label">المبنى:</span>
-                            <span class="value">كلية الحاسب</span>
-                        </div>
-                        <div class="info-row">
-                            <span class="label">اللوكر:</span>
-                            <span class="value badge-locker">12</span>
-                        </div>
-                        <div class="info-row">
-                            <i class="fa-regular fa-clock icon-detail"></i>
-                            <span class="value">من 10:00 ص إلى 12:00 م</span>
-                        </div>
-                        <div class="info-row">
-                            <i class="fa-regular fa-calendar icon-detail"></i>
-                            <span class="value">2025/09/25</span>
-                        </div>
-                    </div>
+            <!-- بطاقة تفاصيل الحجز -->
+            <div class="booking-card">
+                <div class="card-row">
+                    <span class="label">المبنى:</span>
+                    <span class="value">كلية الحاسب</span>
                 </div>
-            </section>
+                <div class="card-row">
+                    <span class="label">اللوكر:</span>
+                    <span class="value locker-badge">12</span>
+                </div>
+                <div class="card-row detail-row">
+                    <i class="fa-regular fa-clock"></i>
+                    <span>من 10:00 ص إلى 12:00 م</span>
+                </div>
+                <div class="card-row detail-row">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>2025/08/25</span>
+                </div>
+            </div>
 
         </div>
 
-        <!-- شريط التنقل السفلي (Bottom Navigation Bar) -->
-        <nav class="bottom-nav">
-            <a href="#" class="nav-item active">
+        <!-- شريط التنقل السفلي (Bottom Navigation) -->
+        <div class="bottom-nav">
+            <div class="nav-tab active">
                 <i class="fa-solid fa-house"></i>
                 <span>الرئيسية</span>
-            </a>
-            <a href="#" class="nav-item">
+            </div>
+            <div class="nav-tab">
                 <i class="fa-regular fa-calendar-days"></i>
                 <span>الحجوزات</span>
-            </a>
-            <a href="#" class="nav-item">
+            </div>
+            <div class="nav-tab">
                 <i class="fa-regular fa-bell"></i>
                 <span>التنبيهات</span>
-            </a>
-            <a href="#" class="nav-item">
+            </div>
+            <div class="nav-tab">
                 <i class="fa-regular fa-user"></i>
                 <span>الملف الشخصي</span>
-            </a>
-        </nav>
+            </div>
+        </div>
 
     </div>
 
