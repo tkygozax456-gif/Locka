@@ -1,355 +1,177 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f4f7fc;
-    color: #1d3557;
-}
-
-.app {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    background: #ffffff;
+    color: #173b6c;
     width: 100%;
-    max-width: 430px;
     min-height: 100vh;
-    margin: auto;
-    background: white;
-    padding-bottom: 85px;
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
-.header {
-    height: 70px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    border-bottom: 1px solid #e5e8ee;
-}
-
-.header h1 {
-    font-size: 20px;
-}
-
-.back {
-    text-decoration: none;
-    color: #2d5b9e;
-    font-size: 32px;
-}
-
-
-/* =========================
-   CONTENT
-========================= */
-
+/* ===== الحاوية الرئيسية ===== */
+.container,
+.main-container,
+.page,
 .content {
-    padding: 25px 20px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 30px 7%;
 }
 
-
-/* =========================
-   LOCATION
-========================= */
-
-.location-box {
-    background: #f1f6ff;
-    border-radius: 15px;
-    padding: 18px;
-    margin-bottom: 20px;
-}
-
-.location-box h2 {
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.location-box p {
-    color: #777;
-    font-size: 13px;
-}
-
-
-/* =========================
-   LEGEND
-========================= */
-
-.legend {
-    display: flex;
-    gap: 25px;
-    margin-bottom: 20px;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.available-dot {
-    background: #7ccfc1;
-}
-
-.reserved-dot {
-    background: #dcdcdc;
-}
-
-
-/* =========================
-   LOCKERS
-========================= */
-
-.lockers {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
-}
-
-.locker {
-    height: 55px;
-    border-radius: 9px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.locker.available {
-    background: #d9f3ef;
-    color: #287c72;
-}
-
-.locker.reserved {
-    background: #eeeeee;
-    color: #999;
-}
-
-
-/* =========================
-   BOOKING CARD
-========================= */
-
-.booking-card {
-    margin-top: 25px;
-    background: #f1f6ff;
-    padding: 20px;
-    border-radius: 15px;
-}
-
-.booking-card h3 {
-    font-size: 17px;
-    margin-bottom: 8px;
-}
-
-.booking-card p {
-    color: #777;
-    font-size: 13px;
-    line-height: 1.7;
+/* ===== العنوان ===== */
+h1 {
+    text-align: center;
+    color: #164b86;
+    font-size: 32px;
     margin-bottom: 15px;
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
-.main-button {
-    display: block;
-    width: 100%;
+h2 {
+    color: #164b86;
     text-align: center;
-    text-decoration: none;
-    background: #2d5b9e;
-    color: white;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 15px;
+    margin-bottom: 10px;
 }
 
-.main-button:hover {
-    background: #234a82;
+p {
+    text-align: center;
+    color: #555;
+    font-size: 16px;
 }
 
+/* ===== البطاقات ===== */
+.cards,
+.lockers,
+.locker-container,
+.grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
 
-/* =========================
-   LOCKER INFO
-========================= */
-
-.locker-info-card {
-    background: #f1f6ff;
+/* ===== كل لوكر ===== */
+.locker,
+.card,
+.locker-box {
+    min-height: 85px;
+    background: #f5f9ff;
+    border: 2px solid #d7e7f8;
     border-radius: 15px;
-    padding: 20px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #164b86;
+    transition: 0.2s;
+}
+
+.locker:hover,
+.card:hover,
+.locker-box:hover {
+    transform: translateY(-3px);
+    border-color: #4c91d9;
+    background: #eaf4ff;
+}
+
+/* ===== المتاح ===== */
+.available {
+    background: #dff6e8;
+    border-color: #a8dfbd;
+    color: #217a4b;
+}
+
+/* ===== المحجوز ===== */
+.reserved,
+.booked {
+    background: #eeeeee;
+    border-color: #d5d5d5;
+    color: #777777;
+}
+
+/* ===== الأزرار ===== */
+button,
+.btn {
+    border: none;
+    background: #1769aa;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+    background: #0e4f82;
+}
+
+/* ===== معلومات الحجز ===== */
+.booking-details {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #f7fbff;
+    border: 1px solid #d8e8f8;
+    border-radius: 20px;
+}
+
+.booking-details h2 {
     margin-bottom: 25px;
 }
 
-.locker-icon {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    background: #dce9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 28px;
+.booking-details p {
+    text-align: right;
+    padding: 12px;
+    border-bottom: 1px solid #e2edf7;
 }
 
-.locker-info-card h2 {
-    font-size: 18px;
-    margin-bottom: 7px;
+/* ===== الشاشات المتوسطة ===== */
+@media (max-width: 900px) {
+
+    .cards,
+    .lockers,
+    .locker-container,
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .container,
+    .main-container,
+    .page,
+    .content {
+        padding: 25px 5%;
+    }
 }
 
-.locker-info-card p {
-    color: #777;
-    font-size: 13px;
-    margin-top: 3px;
-}
+/* ===== الجوال ===== */
+@media (max-width: 600px) {
 
+    .cards,
+    .lockers,
+    .locker-container,
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
 
-/* =========================
-   SECTION TITLE
-========================= */
+    h1 {
+        font-size: 25px;
+    }
 
-.section-title {
-    font-size: 17px;
-    margin-bottom: 15px;
-}
-
-
-/* =========================
-   DETAILS
-========================= */
-
-.details-card {
-    border: 1px solid #e5e8ee;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.detail-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 16px;
-    border-bottom: 1px solid #eeeeee;
-    font-size: 13px;
-}
-
-.detail-row:last-child {
-    border-bottom: none;
-}
-
-.detail-row span {
-    color: #777;
-}
-
-.detail-row strong {
-    color: #1d3557;
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-.form-group {
-    margin-top: 25px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.form-group select {
-    width: 100%;
-    padding: 14px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    background: white;
-    font-size: 14px;
-}
-
-
-/* =========================
-   PRICE
-========================= */
-
-.price-card {
-    margin-top: 20px;
-    padding: 18px;
-    background: #f1f6ff;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.price-card span {
-    color: #666;
-    font-size: 14px;
-}
-
-.price-card strong {
-    color: #2d5b9e;
-    font-size: 18px;
-}
-
-
-/* =========================
-   CONFIRM
-========================= */
-
-.confirm {
-    margin-top: 20px;
-}
-
-
-/* =========================
-   BOTTOM NAVIGATION
-========================= */
-
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    max-width: 430px;
-    height: 70px;
-    background: white;
-    border-top: 1px solid #e5e8ee;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: #888;
-    text-align: center;
-    font-size: 11px;
-}
-
-.nav-item span {
-    display: block;
-    font-size: 21px;
-    margin-bottom: 4px;
-}
-
-.nav-item.active {
-    color: #2d5b9e;
-    font-weight: bold;
+    .container,
+    .main-container,
+    .page,
+    .content {
+        padding: 20px 4%;
+    }
 }
