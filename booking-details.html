@@ -13,10 +13,9 @@
 
     <div class="app">
 
-        <!-- Header -->
         <header class="header">
 
-            <a href="lockers.html" class="back">‹</a>
+            <a href="index.html" class="back">‹</a>
 
             <h1>تفاصيل الحجز</h1>
 
@@ -25,7 +24,6 @@
 
         <main class="content">
 
-            <!-- Locker -->
             <div class="locker-info-card">
 
                 <div class="locker-icon">
@@ -43,7 +41,6 @@
             </div>
 
 
-            <!-- Booking Details -->
             <h3 class="section-title">
                 تفاصيل الحجز
             </h3>
@@ -89,7 +86,6 @@
             </div>
 
 
-            <!-- Duration -->
             <div class="form-group">
 
                 <label>مدة الحجز</label>
@@ -109,7 +105,6 @@
             </div>
 
 
-            <!-- Price -->
             <div class="price-card">
 
                 <span>المبلغ الإجمالي</span>
@@ -119,18 +114,20 @@
             </div>
 
 
-            <!-- Confirm -->
-            <a href="#" class="main-button confirm">
+            <button type="button"
+                    class="main-button confirm"
+                    onclick="confirmBooking()">
+
                 تأكيد الحجز
-            </a>
+
+            </button>
 
         </main>
 
 
-        <!-- Bottom Navigation -->
         <nav class="bottom-nav">
 
-            <a href="lockers.html" class="nav-item">
+            <a href="index.html" class="nav-item">
                 <span>⌂</span>
                 الرئيسية
             </a>
@@ -154,5 +151,13 @@
 
     </div>
 
+
+    <script>
+        function confirmBooking() {
+            alert("✅ تم تأكيد الحجز بنجاح!\n\nتم حجز اللوكر رقم 12.");
+        }
+    </script>
+
 </body>
+
 </html>
