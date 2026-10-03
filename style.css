@@ -121,6 +121,11 @@ body {
     padding: 25px 30px;
 }
 
+
+/* =========================
+   LOCATION
+========================= */
+
 .location-box {
     background: #f1f6ff;
     border-radius: 15px;
@@ -404,6 +409,29 @@ body {
 
 .confirm {
     margin-top: 20px;
+}
+
+
+/* =========================
+   BACK HOME BUTTON
+========================= */
+
+.back-home-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: #2d5b9e;
+    background: white;
+    border: 1px solid #2d5b9e;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.back-home-button:hover {
+    background: #f1f6ff;
 }
 
 
