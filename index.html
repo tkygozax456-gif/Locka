@@ -1,125 +1,126 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>اللوكر المتاحة</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <div class="app">
-
-        <!-- Header -->
-        <header class="header">
-            <a href="#" class="back">‹</a>
-            <h1>اللوكر المتاحة</h1>
-        </header>
-
-        <!-- Content -->
-        <main class="content">
-
-            <div class="location-box">
-                <h2>كلية الحاسب</h2>
-                <p>الدور الأول - اختر اللوكر المناسب لك</p>
+<div class="app">
+    <header class="header">
+        <a href="#" class="back">‹</a>
+        <h1>اللوكر المتاحة</h1>
+    </header>
+    <main class="content">
+        <div class="location-box">
+            <h2>كلية الحاسب</h2>
+            <p>الدور الأول - اختر اللوكر المناسب لك</p>
+        </div>
+        <div class="legend">
+            <div class="legend-item">
+                <span class="dot available-dot"></span>
+                متاح
             </div>
-
-            <!-- الحالات -->
-            <div class="legend">
-
-                <div class="legend-item">
-                    <span class="dot available-dot"></span>
-                    متاح
-                </div>
-
-                <div class="legend-item">
-                    <span class="dot reserved-dot"></span>
-                    محجوز
-                </div>
-
+            <div class="legend-item">
+                <span class="dot reserved-dot"></span>
+                محجوز
             </div>
-
-            <!-- Lockers -->
-            <div class="lockers">
-
-                <div class="locker available">1</div>
-                <div class="locker available">2</div>
-                <div class="locker available">3</div>
-                <div class="locker reserved">4</div>
-                <div class="locker reserved">5</div>
-
-                <div class="locker available">6</div>
-                <div class="locker available">7</div>
-                <div class="locker reserved">8</div>
-                <div class="locker available">9</div>
-                <div class="locker available">10</div>
-
-                <div class="locker available">11</div>
-                <div class="locker available">12</div>
-                <div class="locker reserved">13</div>
-                <div class="locker reserved">14</div>
-                <div class="locker available">15</div>
-
-                <div class="locker available">16</div>
-                <div class="locker reserved">17</div>
-                <div class="locker available">18</div>
-                <div class="locker available">19</div>
-                <div class="locker reserved">20</div>
-
-                <div class="locker available">21</div>
-                <div class="locker available">22</div>
-                <div class="locker reserved">23</div>
-                <div class="locker available">24</div>
-                <div class="locker available">25</div>
-
-            </div>
-
-            <!-- اختيار اللوكر -->
-            <div class="booking-card">
-
-                <h3>هل تريد حجز لوكر؟</h3>
-
-                <p>
-                    اختر رقم اللوكر المتاح ثم انتقل إلى تفاصيل الحجز.
-                </p>
-
-                <a href="booking-details.html" class="main-button">
-                    الانتقال إلى تفاصيل الحجز
-                </a>
-
-            </div>
-
-        </main>
-
-        <!-- Bottom Navigation -->
-        <nav class="bottom-nav">
-
-            <a href="#" class="nav-item active">
-                <span>⌂</span>
-                الرئيسية
+        </div>
+        <div class="lockers">
+            <button class="locker available" data-locker="1">1</button>
+            <button class="locker available" data-locker="2">2</button>
+            <button class="locker available" data-locker="3">3</button>
+            <button class="locker reserved" disabled>4</button>
+            <button class="locker reserved" disabled>5</button>
+            <button class="locker available" data-locker="6">6</button>
+            <button class="locker available" data-locker="7">7</button>
+            <button class="locker reserved" disabled>8</button>
+            <button class="locker available" data-locker="9">9</button>
+            <button class="locker available" data-locker="10">10</button>
+            <button class="locker available" data-locker="11">11</button>
+            <button class="locker available" data-locker="12">12</button>
+            <button class="locker reserved" disabled>13</button>
+            <button class="locker reserved" disabled>14</button>
+            <button class="locker available" data-locker="15">15</button>
+            <button class="locker available" data-locker="16">16</button>
+            <button class="locker reserved" disabled>17</button>
+            <button class="locker available" data-locker="18">18</button>
+            <button class="locker available" data-locker="19">19</button>
+            <button class="locker reserved" disabled>20</button>
+            <button class="locker available" data-locker="21">21</button>
+            <button class="locker available" data-locker="22">22</button>
+            <button class="locker reserved" disabled>23</button>
+            <button class="locker available" data-locker="24">24</button>
+            <button class="locker available" data-locker="25">25</button>
+        </div>
+        <div class="booking-card">
+            <h3 id="selectedText">
+                هل تريد حجز لوكر؟
+            </h3>
+            <p id="bookingHint">
+                اضغط على اللوكر المتاح لاختياره، ثم انتقل إلى تفاصيل الحجز.
+            </p>
+            <a href="booking-details.html"
+               class="main-button"
+               id="continueButton">
+                الانتقال إلى تفاصيل الحجز
             </a>
-
-            <a href="#" class="nav-item">
-                <span>▣</span>
-                حجوزاتي
-            </a>
-
-            <a href="#" class="nav-item">
-                <span>♧</span>
-                التنبيهات
-            </a>
-
-            <a href="#" class="nav-item">
-                <span>♙</span>
-                حسابي
-            </a>
-
-        </nav>
-
-    </div>
-
+        </div>
+    </main>
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item active">
+            <span>⌂</span>
+            الرئيسية
+        </a>
+        <a href="#" class="nav-item">
+            <span>▣</span>
+            حجوزاتي
+        </a>
+        <a href="#" class="nav-item">
+            <span>♧</span>
+            التنبيهات
+        </a>
+        <a href="#" class="nav-item">
+            <span>♙</span>
+            حسابي
+        </a>
+    </nav>
+</div>
+<script>
+const lockers = document.querySelectorAll(".locker.available");
+const selectedText =
+    document.getElementById("selectedText");
+const bookingHint =
+    document.getElementById("bookingHint");
+const continueButton =
+    document.getElementById("continueButton");
+lockers.forEach(function(locker) {
+    locker.addEventListener("click", function() {
+        lockers.forEach(function(item) {
+            item.classList.remove("selected");
+        });
+        locker.classList.add("selected");
+        const lockerNumber =
+            locker.getAttribute("data-locker");
+        localStorage.setItem(
+            "selectedLocker",
+            lockerNumber
+        );
+        selectedText.textContent =
+            "تم اختيار اللوكر رقم " + lockerNumber;
+        bookingHint.textContent =
+            "يمكنك الآن الانتقال إلى تفاصيل الحجز واختيار التاريخ والوقت.";
+    });
+});
+continueButton.addEventListener("click", function(event) {
+    const selectedLocker =
+        localStorage.getItem("selectedLocker");
+    if (!selectedLocker) {
+        event.preventDefault();
+        alert("فضلاً اختر لوكر متاح أولاً.");
+    }
+});
+</script>
 </body>
 </html>
