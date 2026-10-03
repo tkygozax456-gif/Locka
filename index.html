@@ -18,33 +18,20 @@
              class="logo"
              alt="">
 
-        <button class="menu-button" onclick="toggleMenu()">☰</button>
+        <button class="menu-button" id="menuButton">☰</button>
+
+        <div class="menu-dropdown" id="menuDropdown">
+            <a href="index.html">⌂ الرئيسية</a>
+            <a href="booking-details.html">▣ حجوزاتي</a>
+            <a href="#">♧ التنبيهات</a>
+            <a href="#">♙ حسابي</a>
+        </div>
 
         <a href="#" class="back">‹</a>
 
         <h1>الخزانات المتاحة</h1>
 
     </header>
-
-
-    <div class="side-menu" id="sideMenu">
-
-        <button class="close-menu" onclick="toggleMenu()">×</button>
-
-        <h2>القائمة</h2>
-
-        <a href="index.html">⌂ &nbsp; الرئيسية</a>
-
-        <a href="#">▣ &nbsp; حجوزاتي</a>
-
-        <a href="#">♧ &nbsp; التنبيهات</a>
-
-        <a href="#">♙ &nbsp; حسابي</a>
-
-    </div>
-
-
-    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
 
     <main class="content">
@@ -63,20 +50,13 @@
         <div class="legend">
 
             <div class="legend-item">
-
                 <span class="dot available-dot"></span>
-
                 متاح
-
             </div>
 
-
             <div class="legend-item">
-
                 <span class="dot reserved-dot"></span>
-
                 محجوز
-
             </div>
 
         </div>
@@ -87,38 +67,30 @@
             <button class="locker available" data-locker="1">1</button>
             <button class="locker available" data-locker="2">2</button>
             <button class="locker available" data-locker="3">3</button>
-
             <button class="locker reserved" disabled>4</button>
             <button class="locker reserved" disabled>5</button>
 
             <button class="locker available" data-locker="6">6</button>
             <button class="locker available" data-locker="7">7</button>
-
             <button class="locker reserved" disabled>8</button>
-
             <button class="locker available" data-locker="9">9</button>
             <button class="locker available" data-locker="10">10</button>
+
             <button class="locker available" data-locker="11">11</button>
             <button class="locker available" data-locker="12">12</button>
-
             <button class="locker reserved" disabled>13</button>
             <button class="locker reserved" disabled>14</button>
-
             <button class="locker available" data-locker="15">15</button>
+
             <button class="locker available" data-locker="16">16</button>
-
             <button class="locker reserved" disabled>17</button>
-
             <button class="locker available" data-locker="18">18</button>
             <button class="locker available" data-locker="19">19</button>
-
             <button class="locker reserved" disabled>20</button>
 
             <button class="locker available" data-locker="21">21</button>
             <button class="locker available" data-locker="22">22</button>
-
             <button class="locker reserved" disabled>23</button>
-
             <button class="locker available" data-locker="24">24</button>
             <button class="locker available" data-locker="25">25</button>
 
@@ -153,21 +125,6 @@
 
 <script>
 
-function toggleMenu() {
-
-    const menu =
-        document.getElementById("sideMenu");
-
-    const overlay =
-        document.getElementById("menuOverlay");
-
-    menu.classList.toggle("open");
-
-    overlay.classList.toggle("show");
-
-}
-
-
 const lockers =
     document.querySelectorAll(".locker.available");
 
@@ -186,9 +143,7 @@ lockers.forEach(function(locker) {
     locker.addEventListener("click", function() {
 
         lockers.forEach(function(item) {
-
             item.classList.remove("selected");
-
         });
 
         locker.classList.add("selected");
@@ -224,6 +179,22 @@ continueButton.addEventListener("click", function(event) {
         alert("فضلاً اختاري خزانة متاحة أولاً.");
 
     }
+
+});
+
+
+/* القائمة */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const menuDropdown =
+    document.getElementById("menuDropdown");
+
+
+menuButton.addEventListener("click", function() {
+
+    menuDropdown.classList.toggle("open");
 
 });
 
