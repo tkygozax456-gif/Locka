@@ -60,128 +60,56 @@ body {
 
 
 /* =========================
-   MENU BUTTON
+   MENU
 ========================= */
 
 .menu-button {
     position: absolute;
     left: 15px;
-    top: 17px;
-
-    width: 38px;
-    height: 38px;
-
+    top: 18px;
+    width: 34px;
+    height: 34px;
     border: none;
     background: transparent;
-
     color: #2d5b9e;
-
-    font-size: 27px;
-
+    font-size: 23px;
     cursor: pointer;
-
     z-index: 20;
 }
 
-
-/* =========================
-   SIDE MENU
-========================= */
-
-.side-menu {
-    position: fixed;
-
-    top: 0;
-    left: -280px;
-
-    width: 270px;
-    height: 100vh;
-
-    background: white;
-
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.12);
-
-    z-index: 1000;
-
-    padding: 70px 20px 20px;
-
-    transition: left 0.3s ease;
-}
-
-.side-menu.open {
-    left: 0;
-}
-
-.side-menu h2 {
-    color: #2d5b9e;
-
-    font-size: 20px;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-}
-
-.side-menu a {
-    display: block;
-
-    text-decoration: none;
-
-    color: #1d3557;
-
-    background: #f1f6ff;
-
-    padding: 15px;
-
-    margin-bottom: 12px;
-
-    border-radius: 10px;
-
-    font-size: 15px;
-}
-
-.side-menu a:hover {
-    background: #dce9fa;
-
-    color: #2d5b9e;
-}
-
-.close-menu {
-    position: absolute;
-
-    top: 18px;
-    right: 18px;
-
-    border: none;
-
-    background: transparent;
-
-    color: #2d5b9e;
-
-    font-size: 30px;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   MENU OVERLAY
-========================= */
-
-.menu-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0, 0, 0, 0.25);
-
-    z-index: 999;
-
+.menu-dropdown {
     display: none;
+    position: absolute;
+    left: 12px;
+    top: 58px;
+    width: 190px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid #e5e8ee;
+    overflow: hidden;
+    z-index: 30;
 }
 
-.menu-overlay.show {
+.menu-dropdown.open {
     display: block;
+}
+
+.menu-dropdown a {
+    display: block;
+    padding: 13px 16px;
+    text-decoration: none;
+    color: #1d3557;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.menu-dropdown a:last-child {
+    border-bottom: none;
+}
+
+.menu-dropdown a:hover {
+    background: #f1f6ff;
 }
 
 
@@ -192,7 +120,6 @@ body {
 .content {
     padding: 25px 30px;
 }
-
 
 .location-box {
     background: #f1f6ff;
@@ -502,12 +429,14 @@ body {
     }
 
     .menu-button {
-        left: 12px;
-        top: 17px;
+        left: 10px;
+        top: 18px;
     }
 
-    .header h1 {
-        font-size: 18px;
+    .menu-dropdown {
+        left: 10px;
+        top: 58px;
+        width: 185px;
     }
 
 }
