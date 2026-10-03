@@ -22,13 +22,21 @@
 
     <header class="header">
 
+        <!-- اللوقو -->
         <img src="e5c085fd-15d1-4d6d-a512-0117aad22fb9.jpeg"
              class="logo"
-             alt="">
+             alt="Locka">
 
-        <button class="menu-button" id="menuButton">☰</button>
 
-        <div class="menu-dropdown" id="menuDropdown">
+        <!-- القائمة -->
+        <button class="menu-button"
+                id="menuButton">
+            ☰
+        </button>
+
+
+        <div class="menu-dropdown"
+             id="menuDropdown">
 
             <a href="index.html">
                 ⌂ الرئيسية
@@ -49,7 +57,8 @@
         </div>
 
 
-        <a href="index.html"
+        <!-- الرجوع للصفحة السابقة -->
+        <a href="javascript:history.back()"
            class="back">
             ‹
         </a>
@@ -66,11 +75,13 @@
     <main class="content">
 
 
+        <!-- معلومات الخزانة فقط -->
         <div class="locker-info-card">
 
             <div class="locker-icon">
                 🔒
             </div>
+
 
             <div>
 
@@ -79,20 +90,13 @@
                     <span id="lockerNumber">-</span>
                 </h2>
 
-                <p>
-                    كلية الحاسب
-                </p>
-
-                <p>
-                    الدور الأول
-                </p>
-
             </div>
 
         </div>
 
 
 
+        <!-- تفاصيل الحجز -->
         <h3 class="section-title">
             تفاصيل الحجز
         </h3>
@@ -102,6 +106,7 @@
         <div class="booking-form">
 
 
+            <!-- تاريخ البداية -->
             <div class="form-group">
 
                 <label for="startDate">
@@ -117,6 +122,7 @@
 
 
 
+            <!-- وقت البداية -->
             <div class="form-group">
 
                 <label for="startTime">
@@ -132,6 +138,7 @@
 
 
 
+            <!-- تاريخ النهاية -->
             <div class="form-group">
 
                 <label for="endDate">
@@ -151,6 +158,7 @@
 
 
 
+            <!-- وقت النهاية -->
             <div class="form-group">
 
                 <label for="endTime">
@@ -168,6 +176,7 @@
 
 
 
+        <!-- مدة الحجز -->
         <div class="price-card">
 
             <span>
@@ -182,6 +191,7 @@
 
 
 
+        <!-- تأكيد الحجز -->
         <button
             type="button"
             class="main-button confirm"
@@ -199,6 +209,10 @@
 
 
 <script>
+
+/* =========================
+   رقم الخزانة
+========================= */
 
 const selectedLocker =
     localStorage.getItem("selectedLocker");
@@ -221,6 +235,10 @@ if (selectedLocker) {
 
 
 
+/* =========================
+   عناصر الحجز
+========================= */
+
 const startDate =
     document.getElementById("startDate");
 
@@ -242,6 +260,10 @@ const today =
     new Date();
 
 
+
+/* =========================
+   تنسيق التاريخ
+========================= */
 
 function formatDate(date) {
 
@@ -266,6 +288,10 @@ function formatDate(date) {
 
 
 
+/* =========================
+   إضافة شهر
+========================= */
+
 function addOneMonth(dateString) {
 
     const parts =
@@ -280,6 +306,7 @@ function addOneMonth(dateString) {
     const day =
         Number(parts[2]);
 
+
     const lastDayNextMonth =
         new Date(
             year,
@@ -287,11 +314,13 @@ function addOneMonth(dateString) {
             0
         ).getDate();
 
+
     const finalDay =
         Math.min(
             day,
             lastDayNextMonth
         );
+
 
     return year +
         "-" +
@@ -302,6 +331,10 @@ function addOneMonth(dateString) {
 }
 
 
+
+/* =========================
+   القيم الافتراضية
+========================= */
 
 startDate.min =
     formatDate(today);
@@ -317,17 +350,25 @@ endTime.value =
 
 
 
+/* =========================
+   تاريخ النهاية
+========================= */
+
 function updateEndDate() {
 
     if (!startDate.value) {
         return;
     }
 
+
     endDate.min =
         startDate.value;
 
+
     endDate.max =
-        addOneMonth(startDate.value);
+        addOneMonth(
+            startDate.value
+        );
 
 
     if (
@@ -341,11 +382,16 @@ function updateEndDate() {
 
     }
 
+
     calculateDuration();
 
 }
 
 
+
+/* =========================
+   حساب مدة الحجز
+========================= */
 
 function calculateDuration() {
 
@@ -410,7 +456,10 @@ function calculateDuration() {
         totalHours % 24;
 
 
-    if (days > 0 && hours > 0) {
+    if (
+        days > 0 &&
+        hours > 0
+    ) {
 
         durationText.textContent =
             days +
@@ -423,20 +472,26 @@ function calculateDuration() {
     else if (days > 0) {
 
         durationText.textContent =
-            days + " يوم";
+            days +
+            " يوم";
 
     }
 
     else {
 
         durationText.textContent =
-            hours + " ساعة";
+            hours +
+            " ساعة";
 
     }
 
 }
 
 
+
+/* =========================
+   تحديث الحقول
+========================= */
 
 startDate.addEventListener(
     "change",
@@ -466,11 +521,16 @@ updateEndDate();
 
 
 
+/* =========================
+   تأكيد الحجز
+========================= */
+
 document
     .getElementById("confirmButton")
     .addEventListener(
         "click",
         function() {
+
 
             if (!selectedLocker) {
 
@@ -481,6 +541,7 @@ document
                 return;
 
             }
+
 
 
             if (
@@ -497,6 +558,7 @@ document
                 return;
 
             }
+
 
 
             const maximumDate =
@@ -517,6 +579,7 @@ document
                 return;
 
             }
+
 
 
             const start =
@@ -546,6 +609,7 @@ document
             }
 
 
+
             alert(
                 "✅ تم تأكيد الحجز بنجاح!\n\n" +
                 "تم حجز الخزانة رقم " +
@@ -558,7 +622,9 @@ document
 
 
 
-/* القائمة */
+/* =========================
+   القائمة
+========================= */
 
 const menuButton =
     document.getElementById("menuButton");
@@ -571,7 +637,9 @@ menuButton.addEventListener(
     "click",
     function() {
 
-        menuDropdown.classList.toggle("open");
+        menuDropdown.classList.toggle(
+            "open"
+        );
 
     }
 );
@@ -579,4 +647,5 @@ menuButton.addEventListener(
 </script>
 
 </body>
+
 </html>
