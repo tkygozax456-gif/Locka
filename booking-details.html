@@ -2,7 +2,6 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -11,7 +10,6 @@
     <title>تفاصيل الحجز</title>
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 
@@ -57,7 +55,7 @@
         </div>
 
 
-        <!-- الرجوع للصفحة السابقة -->
+        <!-- زر الرجوع -->
         <a href="javascript:history.back()"
            class="back">
             ‹
@@ -81,7 +79,6 @@
             <div class="locker-icon">
                 🔒
             </div>
-
 
             <div>
 
@@ -202,6 +199,16 @@
         </button>
 
 
+
+        <!-- العودة للرئيسية -->
+        <a href="index.html"
+           class="back-home-button">
+
+            العودة للصفحة الرئيسية
+
+        </a>
+
+
     </main>
 
 </div>
@@ -255,7 +262,6 @@ const durationText =
     document.getElementById("durationText");
 
 
-
 const today =
     new Date();
 
@@ -283,7 +289,6 @@ function formatDate(date) {
         month +
         "-" +
         day;
-
 }
 
 
@@ -327,7 +332,6 @@ function addOneMonth(dateString) {
         String(month + 1).padStart(2, "0") +
         "-" +
         String(finalDay).padStart(2, "0");
-
 }
 
 
@@ -384,7 +388,6 @@ function updateEndDate() {
 
 
     calculateDuration();
-
 }
 
 
@@ -406,7 +409,6 @@ function calculateDuration() {
             "—";
 
         return;
-
     }
 
 
@@ -436,7 +438,6 @@ function calculateDuration() {
             "تحققي من التاريخ والوقت";
 
         return;
-
     }
 
 
@@ -484,7 +485,6 @@ function calculateDuration() {
             " ساعة";
 
     }
-
 }
 
 
@@ -531,7 +531,6 @@ document
         "click",
         function() {
 
-
             if (!selectedLocker) {
 
                 alert(
@@ -539,9 +538,7 @@ document
                 );
 
                 return;
-
             }
-
 
 
             if (
@@ -556,9 +553,7 @@ document
                 );
 
                 return;
-
             }
-
 
 
             const maximumDate =
@@ -577,9 +572,7 @@ document
                 );
 
                 return;
-
             }
-
 
 
             const start =
@@ -605,9 +598,7 @@ document
                 );
 
                 return;
-
             }
-
 
 
             alert(
