@@ -299,3 +299,52 @@ body {
         padding: 25px 20px;
     }
 }
+/* =========================
+   اختيار اللوكر
+========================= */
+.locker {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    padding: 0;
+}
+.locker.available:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(45, 91, 158, 0.15);
+}
+.locker.available.selected {
+    background: #2d5b9e;
+    color: white;
+    box-shadow: 0 0 0 3px #dce9fa;
+}
+.locker.reserved {
+    cursor: not-allowed;
+}
+/* =========================
+   حقول التاريخ والوقت
+========================= */
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+    color: #1d3557;
+    font-family: Arial, sans-serif;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: #2d5b9e;
+    box-shadow:
+        0 0 0 2px #dce9fa;
+}
+.form-group small {
+    display: block;
+    color: #777;
+    font-size: 11px;
+    margin-top: 6px;
+}
+.booking-form .form-group {
+    margin-top: 18px;
+}
