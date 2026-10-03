@@ -14,14 +14,37 @@
 
     <header class="header">
 
-        <!-- شعار LOCKA -->
-        <img src="e5c085fd-15d1-4d6d-a512-0117aad22fb9.jpeg" class="logo" alt="">
+        <img src="e5c085fd-15d1-4d6d-a512-0117aad22fb9.jpeg"
+             class="logo"
+             alt="">
+
+        <button class="menu-button" onclick="toggleMenu()">☰</button>
 
         <a href="#" class="back">‹</a>
 
         <h1>الخزانات المتاحة</h1>
 
     </header>
+
+
+    <div class="side-menu" id="sideMenu">
+
+        <button class="close-menu" onclick="toggleMenu()">×</button>
+
+        <h2>القائمة</h2>
+
+        <a href="index.html">⌂ &nbsp; الرئيسية</a>
+
+        <a href="#">▣ &nbsp; حجوزاتي</a>
+
+        <a href="#">♧ &nbsp; التنبيهات</a>
+
+        <a href="#">♙ &nbsp; حسابي</a>
+
+    </div>
+
+
+    <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
 
     <main class="content">
@@ -62,53 +85,41 @@
         <div class="lockers">
 
             <button class="locker available" data-locker="1">1</button>
-
             <button class="locker available" data-locker="2">2</button>
-
             <button class="locker available" data-locker="3">3</button>
 
             <button class="locker reserved" disabled>4</button>
-
             <button class="locker reserved" disabled>5</button>
 
             <button class="locker available" data-locker="6">6</button>
-
             <button class="locker available" data-locker="7">7</button>
 
             <button class="locker reserved" disabled>8</button>
 
             <button class="locker available" data-locker="9">9</button>
-
             <button class="locker available" data-locker="10">10</button>
-
             <button class="locker available" data-locker="11">11</button>
-
             <button class="locker available" data-locker="12">12</button>
 
             <button class="locker reserved" disabled>13</button>
-
             <button class="locker reserved" disabled>14</button>
 
             <button class="locker available" data-locker="15">15</button>
-
             <button class="locker available" data-locker="16">16</button>
 
             <button class="locker reserved" disabled>17</button>
 
             <button class="locker available" data-locker="18">18</button>
-
             <button class="locker available" data-locker="19">19</button>
 
             <button class="locker reserved" disabled>20</button>
 
             <button class="locker available" data-locker="21">21</button>
-
             <button class="locker available" data-locker="22">22</button>
 
             <button class="locker reserved" disabled>23</button>
 
             <button class="locker available" data-locker="24">24</button>
-
             <button class="locker available" data-locker="25">25</button>
 
         </div>
@@ -125,7 +136,6 @@
                 ثم انتقل إلى تفاصيل الحجز.
             </p>
 
-
             <a href="booking-details.html"
                class="main-button"
                id="continueButton">
@@ -138,50 +148,25 @@
 
     </main>
 
-
-    <nav class="bottom-nav">
-
-        <a href="#" class="nav-item active">
-
-            <span>⌂</span>
-
-            الرئيسية
-
-        </a>
-
-
-        <a href="#" class="nav-item">
-
-            <span>▣</span>
-
-            حجوزاتي
-
-        </a>
-
-
-        <a href="#" class="nav-item">
-
-            <span>♧</span>
-
-            التنبيهات
-
-        </a>
-
-
-        <a href="#" class="nav-item">
-
-            <span>♙</span>
-
-            حسابي
-
-        </a>
-
-    </nav>
-
 </div>
 
 
 <script>
+
+function toggleMenu() {
+
+    const menu =
+        document.getElementById("sideMenu");
+
+    const overlay =
+        document.getElementById("menuOverlay");
+
+    menu.classList.toggle("open");
+
+    overlay.classList.toggle("show");
+
+}
+
 
 const lockers =
     document.querySelectorAll(".locker.available");
@@ -206,23 +191,18 @@ lockers.forEach(function(locker) {
 
         });
 
-
         locker.classList.add("selected");
-
 
         const lockerNumber =
             locker.getAttribute("data-locker");
-
 
         localStorage.setItem(
             "selectedLocker",
             lockerNumber
         );
 
-
         selectedText.textContent =
             "تم اختيار الخزانة رقم " + lockerNumber;
-
 
         bookingHint.textContent =
             "يمكنك الآن الانتقال إلى تفاصيل الحجز واختيار التاريخ والوقت.";
@@ -236,7 +216,6 @@ continueButton.addEventListener("click", function(event) {
 
     const selectedLocker =
         localStorage.getItem("selectedLocker");
-
 
     if (!selectedLocker) {
 
